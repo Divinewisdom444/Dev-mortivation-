@@ -1,0 +1,21 @@
+{
+  "name": "Daily Motivation — Divine ✨",
+  "short_name": "Motivation ✨",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff4081",
+  "description": "Stay inspired every day with motivational and love quotes 💫",
+  "icons": [
+    {
+      "src": "https://iili.io/2fY5TQF.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://iili.io/2fY5TQF.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

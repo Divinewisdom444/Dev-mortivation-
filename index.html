@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motivation App</title>
+
+<!-- 🌟 App install + manifest -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff4081">
+<link rel="apple-touch-icon" href="https://iili.io/2fY5TQF.png">
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("service-worker.js")
+        .then(() => console.log("✅ Service Worker registered!"))
+        .catch(err => console.log("❌ SW registration failed:", err));
+    });
+  }
+</script>
+
+<style>
+body {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('https://iili.io/KeP0zLG.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1 {
+  font-size: 28px;
+  text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  margin-bottom: 30px;
+}
+
+#quote {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+#motivationBtn {
+  background-color: #2196F3;
+}
+
+#motivationBtn:hover {
+  background-color: #1976D2;
+  transform: scale(1.05);
+}
+
+#loveBtn {
+  background-color: #ff4081;
+}
+
+#loveBtn:hover {
+  background-color: #f50057;
+  transform: scale(1.05);
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 13px;
+  opacity: 0.8;
+  text-shadow: 0 0 5px rgba(255,255,255,0.4);
+}
+</style>
+</head>
+
+<body>
+  <h1>🌟 Daily Motivation 🌟</h1>
+  <div id="quote">"Believe in yourself and all that you are."</div>
+  <button id="motivationBtn" onclick="newQuote()">Motivation Quotes</button>
+  <button id="loveBtn" onclick="newLoveQuote()">Love Quotes</button>
+
+  <footer>Built by Divine ✨</footer>
+
+<script>
+const quotes = [
+  "Believe in yourself and all that you are.",
+  "Your limitation—it’s only your imagination.",
+  "Push yourself, because no one else is going to do it for you.",
+  "Sometimes later becomes never. Do it now.",
+  "Great things never come from comfort zones.",
+  "Dream it. Wish it. Do it.",
+  "Success doesn’t just find you. You have to go out and get it.",
+  "The harder you work for something, the greater you’ll feel when you achieve it.",
+  "The best way to predict the future is to create it.",
+  "Strive for progress, not perfection.",
+  "The journey of a thousand miles begins with a single step.",
+  "You are stronger than you think.",
+  "What you do today can improve all your tomorrows.",
+  "Don't watch the clock; do what it does. Keep going.",
+  "The only impossible journey is the one you never begin.",
+  "Action is the foundational key to all success.",
+  "Wake up with determination, go to bed with satisfaction.",
+  "If you want to fly, give up everything that weighs you down.",
+  "Today's actions are tomorrow's results.",
+  "The secret of getting ahead is getting started."
+];
+
+const loveQuotes = [
+  "Love is not what you say, love is what you do.",
+  "Every time I see you, I fall in love all over again.",
+  "You are my today and all of my tomorrows.",
+  "In your smile, I see something more beautiful than the stars.",
+  "Love doesn’t need to be perfect. It just needs to be true.",
+  "The best thing to hold onto in life is each other.",
+  "You make my heart smile.",
+  "I didn’t choose you, my heart did.",
+  "Where there is great love, there are always miracles.",
+  "A flower cannot blossom without sunshine, and man cannot live without love.",
+  "If I know what love is, it is because of you.",
+  "We are shaped and fashioned by those we love.",
+  "You are my greatest adventure.",
+  "To love and be loved, that’s everything.",
+  "All you need is love. But a little chocolate now and then doesn't hurt.",
+  "The greatest happiness of life is to be loved for ourselves.",
+  "You don't marry the person you can live with—you marry the one you can't live without.",
+  "Love takes off masks we fear we cannot live without and know we cannot live within."
+];
+
+function newQuote() {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  document.getElementById("quote").innerText = quotes[randomIndex];
+}
+
+function newLoveQuote() {
+  const randomIndex = Math.floor(Math.random() * loveQuotes.length);
+  document.getElementById("quote").innerText = loveQuotes[randomIndex];
+}
+</script>
+</body>
+</html>
